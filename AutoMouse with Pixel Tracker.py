@@ -20,11 +20,12 @@ class MouseTrackerApp:
         #Textos apresentados dentro da janela. Não conheço outro modo de adicionar duas linhas de texto se não assim.
         #O código fica um pouco poluído, vou aprimorar essa parte.
         self.label = tk.Label(root, text="Coordenadas do Mouse: (X, Y)")
-        self.label2 = tk.Label(root, text="Pressione Tab e em seguida espaço para encerrar o programa")
+        self.label2 = tk.Label(root, text="Utilize Alt + Tab para selecionar a janela desejada")
+        self.label3 = tk.Label(root, text="Pressione Tab e em seguida espaço para encerrar o programa")
         self.label.pack()
         self.label2.pack()
+        self.label3.pack()
         root.geometry("400x200")
-        
 
         self.keep_running = True
         self.start_mouse_movement()
