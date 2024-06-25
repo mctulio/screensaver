@@ -26,6 +26,10 @@ class MouseTrackerApp:
         self.label2.pack()
         self.label3.pack()
         root.geometry("400x200")
+        
+        
+         
+        
 
         self.keep_running = True
         self.start_mouse_movement()
@@ -59,6 +63,7 @@ class MouseTrackerApp:
 
 def main():
     root = tk.Tk()
+    root.eval('tk::PlaceWindow . center')
     app = MouseTrackerApp(root)
     root.mainloop()
 
