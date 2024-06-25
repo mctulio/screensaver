@@ -12,8 +12,13 @@ class MouseTrackerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Mouse Tracker")
+       
+        #Botão que chama a função kill_process
         kill = Button(self.root, text="Sair", command=self.kill_process)
         kill.pack(pady=20)      
+
+        #Textos apresentados dentro da janela. Não conheço outro modo de adicionar duas linhas de texto se não assim.
+        #O código fica um pouco poluído, vou aprimorar essa parte.
         self.label = tk.Label(root, text="Coordenadas do Mouse: (X, Y)")
         self.label2 = tk.Label(root, text="Pressione Tab e em seguida espaço para encerrar o programa")
         self.label.pack()
