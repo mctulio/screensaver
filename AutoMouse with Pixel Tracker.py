@@ -1,17 +1,26 @@
 import pyautogui
+import os
 import tkinter as tk
 import threading
 import random
 import time
+from tkinter import messagebox
+from tkinter import *
+
 
 class MouseTrackerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Mouse Tracker")
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+        kill = Button(self.root, text="Sair", command=self.kill_process)
+        kill.pack(pady=20)      
         
         self.label = tk.Label(root, text="Coordenadas do Mouse: (X, Y)")
+        self.label2 = tk.Label(root, text="Pressione Tab e em seguida espaço para encerrar o programa")
         self.label.pack()
+        self.label2.pack()
+        root.geometry("400x200")
 
         self.keep_running = True
         self.start_mouse_movement()
@@ -42,10 +51,17 @@ class MouseTrackerApp:
         self.keep_running = False
         self.root.destroy()
 
+    def kill_process(self):
+        pid = os.getpid()
+        os.kill(pid, 9)
+
+
 def main():
     root = tk.Tk()
     app = MouseTrackerApp(root)
     root.mainloop()
+
+
 
 if __name__ == "__main__":
     main()
