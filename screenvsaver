@@ -54,7 +54,7 @@ class MouseTrackerApp:
         x, y = pyautogui.position()
         self.label.config(text=f"Coordenadas do Mouse: ({x}, {y})")
         if self.keep_running:
-            self.root.after(5, self.update_coordinates)  # Atualiza a cada 100 milissegundos
+            self.root.after(5, self.update_coordinates)  # Atualiza a cada 5 milissegundos
 
     def kill_process(self):
         pid = os.getpid()
